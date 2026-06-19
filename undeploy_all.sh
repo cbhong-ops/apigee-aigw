@@ -76,10 +76,10 @@ echo "Deleting Apigee Proxy..."
 apigeecli apis delete --name "$PROXY_NAME" --org "$PROJECT" --default-token
 
 echo "Deleting Target Server: apigee-aigw-primary..."
-apigeecli targetservers delete --name "apigee-aigw-primary" --org "$PROJECT" --env "$APIGEE_ENV" --default-token --quiet 2>/dev/null || true
+apigeecli targetservers delete --name "apigee-aigw-primary" --org "$PROJECT" --env "$APIGEE_ENV" --default-token || true
 
 echo "Deleting Target Server: apigee-aigw-fallback..."
-apigeecli targetservers delete --name "apigee-aigw-fallback" --org "$PROJECT" --env "$APIGEE_ENV" --default-token --quiet 2>/dev/null || true
+apigeecli targetservers delete --name "apigee-aigw-fallback" --org "$PROJECT" --env "$APIGEE_ENV" --default-token || true
 
 # 2. Clean up Internal Regional Application Load Balancer & Serverless NEG
 echo ""
