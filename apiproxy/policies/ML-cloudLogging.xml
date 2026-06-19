@@ -3,7 +3,7 @@
   <DisplayName>ML-cloudLogging</DisplayName>
   <CloudLogging>
     <!-- <LogName>projects/{organization.name}/logs/apigee-llm-gw</LogName> -->
-    <LogName>projects/{organization.name}/logs/aigw-multillm-demo</LogName>
+    <LogName>projects/{organization.name}/logs/apigee-aigw-logging</LogName>
     <Message contentType="application/json">{
         "statuscode": "{response.status.code}",
         "appname": "{escapeJSON(apigee.developer.app.name)}",

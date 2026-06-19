@@ -151,7 +151,7 @@ Configure log pipeline from Apigee to BigQuery and visualize in Looker Studio.
     1.  **Create BigQuery Dataset**: Create a dataset in BigQuery to store the logs.
     2.  **Create Log Sink**: In Google Cloud Logging, create a Log Sink with the following settings:
         *   **Sink Destination**: BigQuery dataset (select the one created above).
-        *   **Inclusion Filter**: `logName:"projects/[PROJECT_ID]/logs/aigw-multillm-demo"` (Replace `[PROJECT_ID]` with your actual project ID).
+        *   **Inclusion Filter**: `logName:"projects/[PROJECT_ID]/logs/apigee-aigw-logging"` (Replace `[PROJECT_ID]` with your actual project ID).
 *   **Dashboard Configuration**:
     1.  Open **Looker Studio** and create a new report.
     2.  Add data using the **BigQuery** connector.
