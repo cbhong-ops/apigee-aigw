@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-RevokeTokenResponse">
+  <DisplayName>AM-RevokeTokenResponse</DisplayName>
+  <Properties/>
+  <Set>
+    <Payload contentType="application/json">{"enduser_id":"{vd.enduser_id}","status":"revoked"}</Payload>
+  </Set>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

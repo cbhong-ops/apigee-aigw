@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LLMTokenQuota continueOnError="false" enabled="true" name="LTQ-count" type="flexi">
+  <DisplayName>LTQ-count</DisplayName>
+  <Properties/>
+  <SharedName>aigw-token-counter</SharedName>
+  <CountOnly>true</CountOnly>
+  <!-- <Allow countRef="oauthv2accesstoken.OAuthV2-Verify.apiproduct.developer.llmQuota.limit"/>
+  <Interval ref="oauthv2accesstoken.OAuthV2-Verify.apiproduct.developer.llmQuota.interval"/>
+  <TimeUnit ref="oauthv2accesstoken.OAuthV2-Verify.apiproduct.developer.llmQuota.timeunit"/> -->
+    <UseQuotaConfigInAPIProduct stepName="OAuthV2-Verify">
+      <DefaultConfig>
+        <Allow>500</Allow>
+        <Interval>5</Interval>
+        <TimeUnit>minute</TimeUnit>
+      </DefaultConfig>
+    </UseQuotaConfigInAPIProduct>
+    <Identifier ref="aigw.userid"/>
+    <Distributed>true</Distributed>
+    <Synchronous>true</Synchronous>
+    <LLMTokenUsageSource>{jsonPath('$.usage.total_tokens',response.event.current.data,true)}</LLMTokenUsageSource>
+    <!-- <LLMTokenUsageSource>{usedTokenCount}</LLMTokenUsageSource> -->
+    <LLMModelSource>ALL</LLMModelSource>
+  </LLMTokenQuota>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SanitizeUserPrompt async="false" continueOnError="false" enabled="true" name="SUP-MA">
+  <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+  <DisplayName>SUP-MA</DisplayName>
+  <ModelArmor>
+    <TemplateName>projects/{organization.name}/locations/us-central1/templates/apigee-aigw-template</TemplateName>
+  </ModelArmor>
+  <!-- <UserPromptSource>{jsonPath('$.contents[0].parts[0].text',request.content,true)}</UserPromptSource> -->
+  <UserPromptSource>{aigw.prompt}</UserPromptSource>
+</SanitizeUserPrompt>

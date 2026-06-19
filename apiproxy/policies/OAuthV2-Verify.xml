@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 continueOnError="false" enabled="true" name="OAuthV2-Verify">
+  <DisplayName>OAuthV2-Verify</DisplayName>
+  <Properties/>
+  <Attributes/>
+  <CacheExpiryInSeconds>5</CacheExpiryInSeconds>
+  <ExternalAuthorization>false</ExternalAuthorization>
+  <Operation>VerifyAccessToken</Operation>
+  <AccessToken>request.header.x-accesstoken</AccessToken>
+  <SupportedGrantTypes/>
+  <GenerateResponse enabled="true"/>
+  <Tokens/>
+  <RFCCompliantRequestResponse>true</RFCCompliantRequestResponse>
+</OAuthV2>

@@ -1,0 +1,22 @@
+{
+  "name": "apigee-aigw-router",
+  "description": "Route request to Target",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "author": "Google LLC",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@google-cloud/vertexai": "^1.10.2",
+    "express": "^4.21.2",
+    "google-auth-library": "^10.6.2",
+    "properties-reader": "^3.0.1"
+  }
+}

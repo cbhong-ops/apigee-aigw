@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-DLP-Inspect">
+  <DisplayName>EV-DLP-Inspect</DisplayName>
+  <Properties/>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <JSONPayload>
+    <Variable name="dlp_inspect.likelihood">
+      <JSONPath>$.result.findings[*].likelihood</JSONPath>
+    </Variable>
+    <Variable name="dlp_inspect.infotypes">
+      <JSONPath>$.result.findings[*].infoType.name</JSONPath>
+    </Variable>
+  </JSONPayload>
+  <Source clearPayload="false">inspectResponse</Source>
+</ExtractVariables>

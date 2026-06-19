@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 continueOnError="false" enabled="true" name="OA2-InvalidateToken">
+  <DisplayName>OA2-InvalidateToken</DisplayName>
+  <Operation>InvalidateToken</Operation>
+  <Tokens>
+    <Token type="accesstoken" cascade="true">request.formparam.token</Token>
+  </Tokens>
+  <GenerateResponse enabled="false"/>
+  <RFCCompliantRequestResponse>true</RFCCompliantRequestResponse>
+</OAuthV2>

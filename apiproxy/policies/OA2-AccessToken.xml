@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 continueOnError="false" enabled="true" name="OA2-AccessToken">
+  <DisplayName>OA2-AccessToken</DisplayName>
+  <Operation>GenerateAccessToken</Operation>
+  <ExpiresIn>3600000</ExpiresIn>
+  <!-- 3600000ms = 1 hour -->
+  <SupportedGrantTypes>
+    <GrantType>authorization_code</GrantType>
+    <GrantType>client_credentials</GrantType>
+  </SupportedGrantTypes>
+  <!--<GrantType>request.header.grant_type</GrantType>-->
+  <AppEndUser>request.formparam.app_enduser</AppEndUser>
+  <GenerateResponse enabled="true"/>
+  <RFCCompliantRequestResponse>true</RFCCompliantRequestResponse>
+</OAuthV2>

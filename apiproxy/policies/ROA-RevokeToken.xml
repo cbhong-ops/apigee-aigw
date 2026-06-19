@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RevokeOAuthV2 continueOnError="false" enabled="true" name="ROA-RevokeToken">
+  <DisplayName>ROA-RevokeToken</DisplayName>
+  <EndUserId ref="request.formparam.enduser_id"/>
+  <Cascade>true</Cascade>
+</RevokeOAuthV2>

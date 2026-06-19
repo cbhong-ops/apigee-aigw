@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout continueOnError="false" enabled="true" name="SC-DLP-Inspect">
+  <DisplayName>SC-DLP-Inspect</DisplayName>
+  <Properties/>
+  <Request clearPayload="true" variable="inspectRequest">
+    <Set>
+      <Payload contentType="application/json">
+      {
+    "item": {
+        "value": "{aigw.prompt}"
+    },
+    "inspectTemplateName": "projects/{organization.name}/locations/global/inspectTemplates/Inspect-Basic"
+}
+      </Payload>
+      <Verb>POST</Verb>
+    </Set>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+  </Request>
+  <Response>inspectResponse</Response>
+  <HTTPTargetConnection>
+    <Authentication>
+      <GoogleAccessToken>
+        <Scopes>
+          <Scope>https://www.googleapis.com/auth/cloud-platform</Scope>
+        </Scopes>
+      </GoogleAccessToken>
+    </Authentication>
+    <Properties/>
+    <URL>https://dlp.googleapis.com/v2/projects/{organization.name}/content:inspect</URL>
+  </HTTPTargetConnection>
+</ServiceCallout>

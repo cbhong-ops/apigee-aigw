@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAuthV2 continueOnError="false" enabled="true" name="OA2-RefreshToken">
+  <DisplayName>OA2-RefreshToken</DisplayName>
+  <Properties/>
+  <Attributes/>
+  <Operation>RefreshAccessToken</Operation>
+  <GrantType>request.formparam.grant_type</GrantType>
+  <ReuseRefreshToken>true</ReuseRefreshToken>
+  <SupportedGrantTypes>
+  </SupportedGrantTypes>
+  <GenerateResponse enabled="true"/>
+  <Tokens/>
+  <RFCCompliantRequestResponse>true</RFCCompliantRequestResponse>
+</OAuthV2>

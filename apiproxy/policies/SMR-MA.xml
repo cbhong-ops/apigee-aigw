@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SanitizeModelResponse async="false" continueOnError="false" enabled="true" name="SMR-MA">
+  <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+  <DisplayName>SMR-MA</DisplayName>
+  <ModelArmor>
+    <TemplateName>projects/{organization.name}/locations/us-central1/templates/apigee-aigw-template</TemplateName>
+  </ModelArmor>
+  <!-- <UserPromptSource>{jsonPath('$.contents[-1].parts[-1].text',request.content,true)}</UserPromptSource> -->
+  <LLMResponseSource>{jsonPath('$.candidates[-1].content.parts[-1].text',response.content,true)}</LLMResponseSource>
+</SanitizeModelResponse>

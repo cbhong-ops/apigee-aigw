@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-setResponse-count">
+  <DisplayName>AM-setResponse-count</DisplayName>
+  <Properties/>
+  <Set>
+    <Headers>
+      <Header name="semantic_cache">{SemanticCacheLookup.SCL-aigw-text.cache_hit}</Header>
+      <Header name="userid">{aigw.userid}</Header>
+      <Header name="reqtoken">{aigw.reqtoken}</Header>
+      <Header name="restoken">{aigw.restoken}</Header>
+      <Header name="usedtoken">{aigw.addcount}</Header>
+      <Header name="totaltoken">{ratelimit.Q-enforce.used.count}</Header>
+      <Header name="allowedtoken">{ratelimit.Q-enforce.allowed.count}</Header>
+    </Headers>
+  </Set>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="response"/>
+</AssignMessage>

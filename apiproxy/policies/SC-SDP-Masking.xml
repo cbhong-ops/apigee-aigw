@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ServiceCallout continueOnError="false" enabled="true" name="SC-SDP-Masking">
+  <DisplayName>SC-SDP-Masking</DisplayName>
+  <Properties/>
+  <Request clearPayload="true" variable="maskingRequest">
+    <Set>
+      <Payload contentType="application/json">
+      {
+    "item": {
+        "value": "{escapeJSON(aigw.prompt)}"
+    },
+    "inspectTemplateName": "projects/apac-na-apigee-x-demo1/locations/us-east1/inspectTemplates/Inspection-Basic-card",
+    "deidentifyTemplateName": "projects/apac-na-apigee-x-demo1/locations/us-east1/deidentifyTemplates/Masking-Basic-card"
+}
+      </Payload>
+      <Verb>POST</Verb>
+    </Set>
+    <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+  </Request>
+  <Response>maskingResponse</Response>
+  <HTTPTargetConnection>
+    <Authentication>
+      <GoogleAccessToken>
+        <Scopes>
+          <Scope>https://www.googleapis.com/auth/cloud-platform</Scope>
+        </Scopes>
+      </GoogleAccessToken>
+    </Authentication>
+    <Properties/>
+    <URL>https://dlp.googleapis.com/v2/projects/{organization.name}/locations/us-east1/content:deidentify</URL>
+  </HTTPTargetConnection>
+</ServiceCallout>

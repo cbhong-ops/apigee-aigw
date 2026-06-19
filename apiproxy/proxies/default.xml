@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ProxyEndpoint name="default">
+  <Description/>
+  <FaultRules/>
+  <PreFlow name="PreFlow">
+    <Request>
+      <Step>
+        <Name>ADD-CORS</Name>
+      </Step>
+      <Step>
+        <Name>OAuthV2-Verify</Name>
+      </Step>
+      <Step>
+        <Name>EV-llm-reqeust</Name>
+      </Step>
+      <Step>
+        <Name>SUP-MA</Name>
+      </Step>
+      <Step>
+        <Name>Q-enforce</Name>
+      </Step>
+      <Step>
+        <Name>LTQ-enforce</Name>
+      </Step>
+    </Request>
+    <Response>
+    </Response>
+  </PreFlow>
+  <Flows>
+  </Flows>
+  <PostFlow name="PostFlow">
+    <Request>
+    </Request>
+    <Response>
+    </Response>
+  </PostFlow>
+  <PostClientFlow>
+    <Request/>
+    <Response>
+      <Step>
+        <Name>ML-cloudLogging</Name>
+      </Step>
+    </Response>
+  </PostClientFlow>
+  <HTTPProxyConnection>
+    <BasePath>/v1/apigee-aigw/route</BasePath>
+  </HTTPProxyConnection>
+  <RouteRule name="default">
+    <TargetEndpoint>default</TargetEndpoint>
+  </RouteRule>
+</ProxyEndpoint>

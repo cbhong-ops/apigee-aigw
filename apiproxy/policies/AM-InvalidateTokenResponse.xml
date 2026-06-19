@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-InvalidateTokenResponse">
+  <DisplayName>AM-InvalidateTokenResponse</DisplayName>
+  <Properties/>
+  <Set>
+    <Payload contentType="application/json">{"access_token":"{vd.accesstoken}","status":"revoked"}</Payload>
+  </Set>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

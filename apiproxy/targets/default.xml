@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<TargetEndpoint name="default">
+  <Description/>
+  <FaultRules/>
+  <PreFlow name="PreFlow">
+    <Request>
+    </Request>
+    <Response>
+    </Response>
+  </PreFlow>
+  <PostFlow name="PostFlow">
+    <Request/>
+    <Response/>
+  </PostFlow>
+  <Flows/>
+  <EventFlow name="EventFlow" content-type="text/event-stream">
+    <Response>
+      <Step>
+        <Name>JS-checkChunk</Name>
+      </Step>
+      <Step>
+        <Name>LTQ-count</Name>
+      </Step>
+    </Response>
+  </EventFlow>
+  <HTTPTargetConnection>
+    <Properties/>
+    <Authentication>
+      <GoogleIDToken>
+        <Audience>https://apigee-aigw-router-5zdspghlpq-uc.a.run.app</Audience>
+      </GoogleIDToken>
+    </Authentication>
+    <LoadBalancer>
+      <Server name="apigee-aigw-primary"/>
+      <Server name="apigee-aigw-fallback">
+        <IsFallback>true</IsFallback>
+      </Server>
+      <MaxFailures>1</MaxFailures>
+      <RetryEnabled>true</RetryEnabled>
+      <ServerUnhealthyResponse>
+        <ResponseCode>502</ResponseCode>
+        <ResponseCode>503</ResponseCode>
+        <ResponseCode>504</ResponseCode>
+      </ServerUnhealthyResponse>
+    </LoadBalancer>
+    <!-- <Path>{aigw.url}</Path> -->
+  </HTTPTargetConnection>
+</TargetEndpoint>

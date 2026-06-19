@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MessageLogging continueOnError="false" enabled="true" name="ML-cloudLogging">
+  <DisplayName>ML-cloudLogging</DisplayName>
+  <CloudLogging>
+    <!-- <LogName>projects/{organization.name}/logs/apigee-llm-gw</LogName> -->
+    <LogName>projects/{organization.name}/logs/aigw-multillm-demo</LogName>
+    <Message contentType="application/json">{
+        "statuscode": "{response.status.code}",
+        "appname": "{escapeJSON(apigee.developer.app.name)}",
+        "clientip": "{proxy.client.ip}",
+        "basepath": "{proxy.basepath}",   
+        "pathsuffix": "{proxy.pathsuffix}",
+        "verb": "{request.verb}",
+        "llm_model_req": "{escapeJSON(aigw.modelid)}",
+        "llm_model_res": "{escapeJSON(aigw.modelid_res)}",
+      "llm_model_billing": "{escapeJSON(aigw.modelid_billing)}",
+        "llm_user": "{escapeJSON(aigw.userid)}",
+        "llm_prompt": "{escapeJSON(aigw.prompt)}",
+        "llm_response": "{escapeJSON(aigw.response)}",
+        "completionTokens": {firstnonnull(completionTokens,0)},
+        "reasoningTokens": {firstnonnull(reasoningTokens,0)},
+        "promptTokens": {firstnonnull(promptTokens,0)},
+      "cachedTokens": {firstnonnull(cachedTokens,0)},
+        "totalTokens": {firstnonnull(totalTokens,0)},
+        "start" : {client.received.start.timestamp},
+        "end" : {client.sent.end.timestamp},
+        "target.start": {firstnonnull(target.sent.start.timestamp, 0)},
+        "target.end": {firstnonnull(target.received.end.timestamp, 0)},     
+        "error_statuscode": "{error.status.code}",     
+        "error_response": "{escapeJSON(error.content)}",
+        "error_reason": "{error.reason.phrase}",
+        "env_name": "{environment.name}",
+        "messageid": "{messageid}"
+}</Message>
+  </CloudLogging>
+</MessageLogging>

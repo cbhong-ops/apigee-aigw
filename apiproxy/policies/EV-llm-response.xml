@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables continueOnError="false" enabled="true" name="EV-llm-response">
+  <DisplayName>EV-llm-response</DisplayName>
+  <Properties/>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <JSONPayload>
+    <Variable name="reqtoken_raw" type="integer">
+      <JSONPath>$.[?(@.usage.prompt_tokens&gt;0)].usage.prompt_tokens</JSONPath>
+    </Variable>
+    <Variable name="restoken_raw" type="integer">
+      <JSONPath>$.[?(@.usage.completion_tokens&gt;0)].usage.completion_tokens</JSONPath>
+    </Variable>
+    <Variable name="addcount_raw" type="integer">
+      <JSONPath>$.[?(@.usage.total_tokens&gt;0)].usage.total_tokens</JSONPath>
+    </Variable>
+    <Variable name="candidate_parts" type="string">
+      <JSONPath>$.choices[*].message.content</JSONPath>
+    </Variable>
+    <Variable name="model_raw" type="string">
+      <JSONPath>$.model</JSONPath>
+    </Variable>
+  </JSONPayload>
+  <Source clearPayload="false">response</Source>
+  <VariablePrefix>aigw</VariablePrefix>
+</ExtractVariables>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Javascript continueOnError="false" enabled="true" timeLimit="200" name="JS-response-aws-claude-sonnet-4">
+  <DisplayName>JS-response-aws-claude-sonnet-4</DisplayName>
+  <Properties/>
+  <ResourceURL>jsc://response-aws-claude-sonnet-4.js</ResourceURL>
+</Javascript>

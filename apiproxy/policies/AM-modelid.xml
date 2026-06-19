@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<AssignMessage continueOnError="false" enabled="true" name="AM-modelid">
+  <DisplayName>AM-modelid</DisplayName>
+  <Properties/>
+  <Remove>
+    <Headers>
+      <!-- Removes encoding header for receiving streaming' -->
+      <Header name="accept-encoding"/>
+    </Headers>
+  </Remove>
+  <AssignVariable>
+    <Name>target.copy.pathsuffix</Name>
+    <Value>false</Value>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>target.copy.queryparams</Name>
+    <Value>false</Value>
+  </AssignVariable>
+  <AssignVariable>
+    <Name>request.header.modelid</Name>
+    <Ref>aigw.modelid</Ref>
+  </AssignVariable>
+  <IgnoreUnresolvedVariables>true</IgnoreUnresolvedVariables>
+  <AssignTo createNew="false" transport="http" type="request"/>
+</AssignMessage>

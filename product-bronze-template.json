@@ -1,0 +1,50 @@
+{
+  "name": "apigee-aigw-bronze",
+  "displayName": "apigee-aigw-bronze",
+  "approvalType": "auto",
+  "attributes": [
+    {
+      "name": "access",
+      "value": "public"
+    }
+  ],
+  "environments": [
+    "__APIGEE_ENV__"
+  ],
+  "operationGroup": {
+    "operationConfigs": [
+      {
+        "apiSource": "__PROXY_NAME__",
+        "operations": [
+          {
+            "resource": "/"
+          }
+        ],
+        "quota": {
+          "limit": "5",
+          "interval": "5",
+          "timeUnit": "minute"
+        }
+      }
+    ],
+    "operationConfigType": "proxy"
+  },
+  "llmOperationGroup": {
+    "operationConfigs": [
+      {
+        "apiSource": "__PROXY_NAME__",
+        "llmOperations": [
+          {
+            "resource": "/",
+            "model": "ALL"
+          }
+        ],
+        "llmTokenQuota": {
+          "limit": "200000",
+          "interval": "5",
+          "timeUnit": "minute"
+        }
+      }
+    ]
+  }
+}

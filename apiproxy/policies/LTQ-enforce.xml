@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<LLMTokenQuota continueOnError="false" enabled="true" name="LTQ-enforce" type="flexi">
+  <DisplayName>LTQ-enforce</DisplayName>
+  <Properties/>
+  <SharedName>aigw-token-counter</SharedName>
+  <EnforceOnly>true</EnforceOnly>
+  <UseQuotaConfigInAPIProduct stepName="OAuthV2-Verify">
+    <DefaultConfig>
+      <Allow>500</Allow>
+      <Interval>5</Interval>
+      <TimeUnit>minute</TimeUnit>
+    </DefaultConfig>
+  </UseQuotaConfigInAPIProduct>
+  <Identifier ref="aigw.userid"/>
+  <Distributed>true</Distributed>
+  <Synchronous>true</Synchronous>
+  <LLMModelSource>ALL</LLMModelSource>
+</LLMTokenQuota>
