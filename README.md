@@ -34,21 +34,6 @@ To successfully deploy and run all automation scripts (enabling APIs, creating s
 > [!IMPORTANT]
 > Because the scripts interact with multiple distinct Google Cloud services (IAM, Compute Engine, Cloud Run, Model Armor, Service Usage, and Apigee), **it is highly recommended that the deploying user has the `Owner` (`roles/owner`) role** on the project, or at least the `Editor` (`roles/editor`) role combined with **`Project IAM Admin` (`roles/resourcemanager.projectIamAdmin`)** and **`Apigee Organization Admin`** roles. *(Note: The basic `Editor` role alone can create service accounts, but does NOT have permission to bind IAM policies/roles to them).*
 
-If you are following the principle of least privilege, the deploying user must have the following specific IAM roles assigned at the project level:
-
-| Service | Required IAM Role | Purpose in Scripts |
-| :--- | :--- | :--- |
-| **IAM** | **Project IAM Admin** (`roles/resourcemanager.projectIamAdmin`) | To bind roles (e.g. Cloud Run Invoker, Agent Platform User) to the newly created service accounts. |
-| **IAM** | **IAM Service Account Admin** (`roles/iam.serviceAccountAdmin`) | To create and delete custom service accounts (`apigee-aigw-router-svc-acct`, etc.). |
-| **IAM** | **Service Account User** (`roles/iam.serviceAccountUser`) | To deploy Cloud Run services using the custom service accounts. |
-| **Compute Engine** | **Compute Network Admin** (`roles/compute.networkAdmin`) | To discover/verify subnets, manage Serverless NEGs, and reserve static internal IP addresses. |
-| **Compute Engine** | **Compute Load Balancer Admin** (`roles/compute.loadBalancerAdmin`) | To provision and manage the regional HTTPS load balancer, Target HTTPS Proxy, URL Map, and SSL Certificates. |
-| **Cloud Run** | **Cloud Run Developer** (`roles/run.developer`) | To deploy, configure, and delete the router and client Cloud Run services. |
-| **Apigee** | **Apigee Organization Admin** (`roles/apigee.admin`) | To deploy proxies, manage products, developers, developer apps, and configure Target Servers. |
-| **Security** | **Model Armor Admin** (`roles/modelarmor.admin`) | To configure and manage Model Armor templates. |
-| **Service Usage** | **Service Usage Admin** (`roles/serviceusage.serviceUsageAdmin`) | To enable Google Cloud APIs (e.g., Model Armor API). |
-
----
 
 ## Google Cloud Authentication Setup
 
